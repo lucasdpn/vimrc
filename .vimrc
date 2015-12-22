@@ -1,5 +1,5 @@
-"set nocompatible		" do not make vim compatible with vi.
-
+set nocompatible		" do not make vim compatible with vi.
+syntax enable
 colorscheme desert
 
 set autoindent          " auto indenting
@@ -32,6 +32,21 @@ set lazyredraw          " redraw only when we need to.
 nnoremap B ^
 nnoremap E $
 
+" possibilita colar em outra janela
+vmap <F4> "+y"
+
+"'Ctrl+t' abre uma nova aba
+nmap <C-t> :tabnew<CR>
+""'Ctrl+PageUp' pula para próxima aba *
+nmap <C-n> :tabnext<CR>
+"'Ctrl+PageDown' volta para aba anterior *
+nmap <C-p> :tabprevious<CR>
+""'Ctrl+e' fecha a aba corrente
+nmap <C-w> :tabclose<CR>
+
+nmap <C-Up> :wincmd k<CR>
+nmap <C-Down> :wincmd j<CR>
+
 " Pathogen load
 filetype off
 
@@ -40,3 +55,5 @@ call pathogen#helptags()
 
 filetype plugin indent on
 syntax enable
+
+let g:pymode_breakpoint_cmd = 'pdb.set_trace()'
