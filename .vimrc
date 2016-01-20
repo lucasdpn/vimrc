@@ -46,9 +46,11 @@ nmap <C-w> :tabclose<CR>
 
 nmap <C-Up> :wincmd k<CR>
 nmap <C-Down> :wincmd j<CR>
+nmap <C-Left> :wincmd h<CR>
+nmap <C-Right> :wincmd l<CR>
 
 " Pathogen load
-filetype off
+" filetype off
 
 call pathogen#infect()
 call pathogen#helptags()
@@ -62,7 +64,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0 
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_mode_map = { 'mode': 'active',
