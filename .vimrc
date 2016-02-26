@@ -1,4 +1,6 @@
-set nocompatible		" do not make vim compatible with vi.
+set nocompatible        " do not make vim compatible with vi.
+set encoding=utf-8
+set fileencodings=utf-8
 syntax enable
 colorscheme desert
 
@@ -19,14 +21,19 @@ set showmode            " display the current mode in the status bar
 set title               " show file in titlebar
 set scrolloff=3         " When the page starts to scroll, keep the cursor 3 lines from top/bottom
 
-set softtabstop=4   	" number of spaces in tab when editing
-set tabstop=4			" number of visual spaces per TAB
-set expandtab       	" tabs are spaces
+set softtabstop=4       " number of spaces in tab when editing
+set tabstop=4           " number of visual spaces per TAB
+set expandtab           " tabs are spaces
 
 set cursorline          " highlight current line
 set wildmenu            " visual autocomplete for command menu
 
 set lazyredraw          " redraw only when we need to.
+
+" Mouse
+set mouse=a                 " Automatically enable mouse usage
+set mousehide               " Hide the mouse cursor while typing
+scriptencoding utf-8
 
 " move to beginning/end of line
 nnoremap B ^
@@ -44,6 +51,7 @@ nmap <C-p> :tabprevious<CR>
 ""'Ctrl+e' fecha a aba corrente
 nmap <C-w> :tabclose<CR>
 
+" Navigation through split windows.
 nmap <C-Up> :wincmd k<CR>
 nmap <C-Down> :wincmd j<CR>
 nmap <C-Left> :wincmd h<CR>
@@ -68,8 +76,8 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_mode_map = { 'mode': 'active',
-                        \ 'active_filetypes': ["python"],
-                        \ 'passive_filetypes': ["javascript"] }
+                            \ 'active_filetypes': ["python"],
+                            \ 'passive_filetypes': ["javascript"] }
 
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_python_checkers = ['pep8', 'pyflakes']
